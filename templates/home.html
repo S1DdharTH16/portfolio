@@ -1,8 +1,33 @@
 {% extends "base.html" %}
 
-{% block title %}Home - My Portfolio{% endblock %}
+{% block title %}Home{% endblock %}
 
 {% block content %}
-    <h1>Welcome to My Tech Portfolio 🚀</h1>
-    <p>Building amazing things with Python, Flask, and more!</p>
+<div class="container" style="text-align: center; margin-top: 100px;">
+    <h1>Hi, I'm <span id="typed-text"></span></h1>
+    <p style="font-size: 1.2em; color: #555;">A passionate developer building things with Flask, Python, and more.</p>
+    <a href="/projects" style="text-decoration: none;">
+        <button style="padding: 10px 20px; font-size: 1em; margin-top: 20px; cursor: pointer;">See My Projects</button>
+    </a>
+</div>
+
+<!-- Typed.js typing animation -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  var typed = new Typed("#typed-text", {
+    strings: ["Aryan.", "a Flask Developer.", "a Problem Solver.", "open to work!"],
+    typeSpeed: 60,
+    backSpeed: 30,
+    loop: true
+  });
+</script>
+
+<!-- Optional: Small CSS tweak -->
+<style>
+  #typed-text {
+    color: #00f3ff;
+    font-weight: bold;
+    font-size: 2em;
+  }
+</style>
 {% endblock %}
