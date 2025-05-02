@@ -1,8 +1,248 @@
 {% extends "base.html" %}
 
-{% block title %}About - My Portfolio{% endblock %}
+{% block title %}About{% endblock %}
 
 {% block content %}
+<div class="about-section">
     <h1>About Me</h1>
-    <p>I'm a passionate developer with a love for backend, automation, and clean design.</p>
+
+    <!-- Short Bio -->
+    <p>
+        I'm <strong>Siddharth Singh Yadav</strong>, a passionate software engineer with a strong foundation in
+        Python, Machine Learning, and Computer Vision. I recently completed my B.Tech from IIIT Manipur with a CPI of 8.51
+        and received the <strong>Gold Medal for Academic Excellence</strong>.
+    </p>
+
+    <!-- Resume Button -->
+    <a href="{{ url_for('static', filename='Siddharth_Singh_Yadav_Resume.pdf') }}" download>
+        <button class="resume-btn">📄 Download Resume</button>
+    </a>
+
+    <!-- Education -->
+    <h2>🎓 Education</h2>
+    <div class="edu-card">
+        <div class="edu-right">
+            <h3>IIIT Manipur</h3>
+            <p><strong>B.Tech – Electronics and Communication Engineering</strong></p>
+            <p class="edu-badge">CPI: 8.51 • Gold Medalist</p>
+        </div>
+    </div>
+
+    <!-- Experience -->
+    <h2>💼 Experience</h2>
+    <div class="experience-cards">
+
+        <div class="exp-card">
+            <div class="exp-header">
+                <h3 class="exp-title">Software Developer Engineer</h3>
+                <p class="exp-company">@ Noetic Logistiex</p>
+                <div class="exp-time">June 2024 – Present</div>
+            </div>
+            <div class="exp-description">
+                <p>Built Flask APIs for pricing insights and e-commerce scraping.</p>
+                <p>Developed Spring Boot APIs with WhatsApp integrations for order workflows.</p>
+            </div>
+        </div>
+
+        <div class="exp-card">
+            <div class="exp-header">
+                <h3 class="exp-title">Software Intern</h3>
+                <p class="exp-company">@ Noetic Logistiex</p>
+                <div class="exp-time">Jan 2024 – Apr 2024</div>
+            </div>
+            <div class="exp-description">
+                <p>Automated e-commerce image processing using OpenCV and PIL.</p>
+                <p>Fine-tuned ML models for background removal.</p>
+            </div>
+        </div>
+
+        <div class="exp-card">
+            <div class="exp-header">
+                <h3 class="exp-title">Computer Vision Intern</h3>
+                <p class="exp-company">@ Dantani Sports</p>
+                <div class="exp-time">Feb 2023 – Sept 2023</div>
+            </div>
+            <div class="exp-description">
+                <p>Achieved 99.73% mAP with YOLO-based object detection models.</p>
+                <p>Built training pipelines and optimized inference performance.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Skills -->
+    <h2>🛠️ Skills & Technologies</h2>
+    <div class="skills-grid">
+        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">Python</div>
+        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask">Flask</div>
+        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">Java</div>
+        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">C++</div>
+        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV">OpenCV</div>
+        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow">TensorFlow</div>
+        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">Git</div>
+        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">GitHub</div>
+        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP">GCP</div>
+        <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot">Spring Boot</div>
+    </div>
+</div>
+
+<!-- Styles -->
+<style>
+    .about-section {
+        padding: 40px;
+        max-width: 1000px;
+        margin: auto;
+        color: #ddd;
+    }
+
+    .about-section h1, .about-section h2 {
+        color: #00f3ff;
+        margin-bottom: 20px;
+    }
+
+    .about-section h3 {
+        color: #ff00ff;
+        margin-bottom: 5px;
+    }
+
+    .about-section p {
+        font-size: 1em;
+        line-height: 1.6;
+    }
+
+    .resume-btn {
+        margin: 15px 0 30px;
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        font-weight: bold;
+        box-shadow: 0 0 8px #00f3ff;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .resume-btn:hover {
+        background-color: #0056b3;
+        box-shadow: 0 0 15px #00f3ff;
+    }
+
+    /* Education */
+    .edu-card {
+        display: flex;
+        justify-content: center;
+        background-color: #1c1c1c;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 40px;
+        box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+        transition: box-shadow 0.3s;
+    }
+
+    .edu-card:hover {
+        box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+    }
+
+    .edu-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .edu-right h3 {
+        margin: 0 0 5px 0;
+        color: #00f3ff;
+    }
+
+    .edu-badge {
+        color: #ff00ff;
+        font-weight: bold;
+        margin: 5px 0;
+    }
+
+    .edu-duration {
+        color: #aaa;
+    }
+
+    /* Experience */
+    .experience-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .exp-card {
+        background-color: #1c1c1c;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 0 12px rgba(255, 0, 255, 0.1);
+        transition: box-shadow 0.3s;
+    }
+
+    .exp-card:hover {
+        box-shadow: 0 0 25px rgba(255, 0, 255, 0.3);
+    }
+
+    .exp-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .exp-title {
+        color: #ff00ff;
+        margin: 0;
+    }
+
+    .exp-company {
+        font-size: 0.95em;
+        color: #ccc;
+        margin-top: 3px;
+    }
+
+    .exp-time {
+        font-size: 0.9em;
+        color: #aaa;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .exp-description {
+        text-align: center;
+    }
+
+    .exp-description p {
+        margin: 8px 0;
+        color: #ddd;
+        font-size: 0.95em;
+        line-height: 1.5;
+    }
+
+    /* Skills */
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .skill-item {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        color: #ccc;
+    }
+
+    .skill-item img {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        filter: drop-shadow(0 0 5px #00f3ff);
+    }
+</style>
 {% endblock %}
