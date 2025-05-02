@@ -1,9 +1,98 @@
 {% extends "base.html" %}
 
-{% block title %}About - My Portfolio{% endblock %}
+{% block title %}Projects{% endblock %}
 
 {% block content %}
-    <h1>My Projects</h1>
-    <p>List your projects here.</p>
-{% endblock %}
+<div class="container" style="padding: 40px;">
 
+    <h1 style="text-align: center; margin-bottom: 40px; color: #00f3ff;">Projects</h1>
+
+    <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <div class="project-card">
+            <h2>Rep Counter</h2>
+            <p>A real-time fitness tracking web app that uses webcam input to count exercise repetitions. Built with Python, Flask, OpenCV, and MediaPipe for accurate joint angle analysis and real-time feedback.</p>
+            <div class="tech-icons">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" title="Python" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" title="Flask" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/OpenCV_Logo_with_text_svg_version.svg" title="OpenCV" />
+                <img src="https://raw.githubusercontent.com/google/mediapipe/main/docs/images/mediapipe_logo.png" title="MediaPipe" style="height:40px;" />
+            </div>
+            <a href="https://github.com/S1DdharTH16/Rep-Counter-using-Mediapipe" class="github-link" target="_blank">GitHub ↗</a>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+            <h2>Image Similarity Search</h2>
+            <p>A deep learning model that extracts image features to find visually similar images from a dataset using cosine similarity. Built with TensorFlow, Flask, and Nearest Neighbors for fast search results.</p>
+            <div class="tech-icons">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" title="Python" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" title="Flask" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" title="TensorFlow" />
+            </div>
+            <a href="https://github.com/S1DdharTH16/Reverse--Image-Searcher" class="github-link" target="_blank">GitHub ↗</a>
+        </div>
+
+    </div>
+</div>
+
+<!-- Responsive Grid Styles -->
+<style>
+    .projects-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+    }
+
+    .project-card {
+        background-color: #1a1a1a;
+        border-radius: 12px;
+        padding: 30px;
+        flex: 1 1 350px;
+        max-width: 500px;
+        box-shadow: 0 0 12px rgba(0, 243, 255, 0.1);
+        transition: box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+        box-shadow: 0 0 25px #00f3ff;
+    }
+
+    .project-card h2 {
+        color: #00f3ff;
+        font-size: 24px;
+    }
+
+    .project-card p {
+        font-size: 16px;
+        color: #ccc;
+        margin: 10px 0 20px;
+    }
+
+    .tech-icons img {
+        width: 40px;
+        margin-right: 15px;
+        vertical-align: middle;
+        filter: drop-shadow(0 0 5px #00f3ff);
+    }
+
+    .github-link {
+        text-decoration: none;
+        color: #00f3ff;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .github-link:hover {
+        color: #ff00ff;
+    }
+
+    @media (max-width: 768px) {
+        .project-card {
+            max-width: 100%;
+        }
+    }
+</style>
+{% endblock %}
