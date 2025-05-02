@@ -3,31 +3,155 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<div class="container" style="text-align: center; margin-top: 100px;">
-    <h1>Hi, I'm <span id="typed-text"></span></h1>
-    <p style="font-size: 1.2em; color: #555;">A passionate developer building things with Flask, Python, and more.</p>
-    <a href="/projects" style="text-decoration: none;">
-        <button style="padding: 10px 20px; font-size: 1em; margin-top: 20px; cursor: pointer;">See My Projects</button>
-    </a>
+<div class="hero-section">
+    <div class="hero-text">
+        <h1>Hi, I am <span class="highlight-name">Siddharth Singh Yadav</span></h1>
+        <h2><span class="highlight-role">Machine Learning & Computer Vision Engineer</span></h2>
+        <p>I specialize in Python, Flask, Deep Learning, and building intelligent web applications.</p>
+
+        <!-- Social Icons -->
+        <div class="social-icons">
+            <!-- GitHub -->
+            <a href="https://github.com/S1DdharTH16" title="GitHub">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="Github" />
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/siddharth-singh-yadav-b1b058232/" title="LinkedIn">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn" />
+            </a>
+
+            <!-- LeetCode (using custom icon image) -->
+            <a href="https://leetcode.com/u/user3880sE/" title="LeetCode">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" />
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:siddharthsy1606@gmail.com" title="Email">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" alt="Email" />
+            </a>
+        </div>
+
+        <!-- Resume Button -->
+        <a href="{{ url_for('static', filename='Siddharth_Singh_Yadav_Resume.pdf') }}" download>
+            <button class="resume-btn">📄 Download Resume</button>
+        </a>
+    </div>
+
+    <!-- Hero Illustration -->
+    <div class="hero-image">
+        <img src="{{ url_for('static', filename='images/img1.svg') }}" alt="Hero Illustration" />
+    </div>
 </div>
 
-<!-- Typed.js typing animation -->
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script>
-  var typed = new Typed("#typed-text", {
-    strings: ["Aryan.", "a Flask Developer.", "a Problem Solver.", "open to work!"],
-    typeSpeed: 60,
-    backSpeed: 30,
-    loop: true
-  });
-</script>
+<!-- FontAwesome -->
+<script src="https://kit.fontawesome.com/a2e0e6f91d.js" crossorigin="anonymous"></script>
 
-<!-- Optional: Small CSS tweak -->
+<!-- Styles -->
 <style>
-  #typed-text {
-    color: #00f3ff;
-    font-weight: bold;
-    font-size: 2em;
-  }
+    .hero-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 60px 40px;
+        background-color: #0f0f0f;
+        color: white;
+    }
+
+    .hero-text {
+        flex: 1 1 500px;
+        max-width: 600px;
+    }
+
+    .hero-text h1 {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    .highlight-name {
+        color: #00f3ff;
+    }
+
+    .highlight-role {
+        font-size: 1.5em;
+        color: #ff00ff;
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+
+    .hero-text p {
+        font-size: 1.1em;
+        margin-bottom: 20px;
+        color: #ccc;
+    }
+
+    .social-icons {
+        margin-bottom: 25px;
+    }
+
+    .social-icons a {
+        font-size: 1.5em;
+        color: #00f3ff;
+        margin-right: 20px;
+        transition: transform 0.3s, color 0.3s;
+    }
+
+    .social-icons img {
+        height: 24px;
+        vertical-align: middle;
+        margin-right: 20px;
+        filter: invert(1);
+        transition: transform 0.3s;
+    }
+
+    .social-icons a:hover,
+    .social-icons img:hover {
+        transform: scale(1.2);
+        color: #ff00ff;
+    }
+
+    .resume-btn {
+        background-color: #007bff;
+        color: white;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1em;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+        box-shadow: 0 0 10px #007bff;
+    }
+
+    .resume-btn:hover {
+        background-color: #0056b3;
+        box-shadow: 0 0 20px #00f3ff;
+    }
+
+    .hero-image {
+        flex: 1 1 100px;
+        text-align: center;
+    }
+
+    .hero-image img {
+        max-width: 70%;
+        height: auto;
+    }
+
+    @media (max-width: 768px) {
+        .hero-section {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .hero-text, .hero-image {
+            max-width: 100%;
+        }
+
+        .hero-text h1 {
+            font-size: 2em;
+        }
+    }
 </style>
 {% endblock %}
